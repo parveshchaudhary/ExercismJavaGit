@@ -6,12 +6,56 @@ class DnDCharacter {
     int  ability,constitutionmodifier, strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints;
 
     int roll(){
-        int[] rollArr = new int[4];
-        for(int i=0 ; i<3 ; i++){
-            rollArr[i] = (int )(Math.random() * 6 + 1);
-        } 
-        Arrays.sort(rollArr);
-        return rollArr[3]+rollArr[2]+rollArr[1];
+        // int[] rollArr = new int[4];
+        // for(int i=0 ; i<3 ; i++){
+        //     rollArr[i] = (int )(Math.random() * 6 + 1);
+        // } 
+        // Arrays.sort(rollArr);
+        // return rollArr[3]+rollArr[2]+rollArr[1];
+
+        int a,b,c,d,sum=0;
+
+        a=(int)(Math.random() * 6 + 1);
+        b=(int)(Math.random() * 6 + 1);
+        c=(int)(Math.random() * 6 + 1);
+        d=(int)(Math.random() * 6 + 1);
+
+        if(a>b){
+            sum += a;
+            if(c>d){
+                sum += c;
+                if(d>b){
+                    sum += d;
+                } else{
+                    sum += b;
+                }
+            } else{
+               sum += d; 
+               if(b>c){
+                    sum += b;
+               } else{
+                    sum += c;
+               }
+            }
+        } else{
+            sum += b;
+            if(c>d){
+                sum += c;
+                if(d>a){
+                    sum += d;
+                } else{
+                    sum += a;
+                }
+            } else{
+               sum += d; 
+               if(a>c){
+                    sum += a;
+               } else{
+                    sum += c;
+               }
+            }
+        }
+        return sum; 
     }
 
     DnDCharacter(){
@@ -24,12 +68,8 @@ class DnDCharacter {
         this.wisdom = roll();
         this.charisma = roll();
         
-        this.constitutionmodifier = (int) Math.floor((constitution-10)/2) ;
-
-        //Does not produce the desired result
-        // this.hitpoints = 10 + constitutionmodifier;
-
-        this.hitpoints = 10 + modifier(constitution);
+        this.constitutionmodifier = (int) Math.floor((constitution-10)/2.0);
+        this.hitpoints = 10 + constitutionmodifier;
     }
 
     int ability() {
@@ -84,7 +124,7 @@ class DnDCharacter {
     }
 
     int getHitpoints() {
-         return hitpoints;
+        return hitpoints;
     }
 
 }

@@ -9,8 +9,12 @@ public class BeerSong{
         StringBuilder songverse = new StringBuilder();
 
         while(topass > 0){
-            if(have>1){
+            if(have>2){
                 songverse.append(String.format("%d bottles of beer on the wall, %d bottles of beer.\nTake one down and pass it around, %d bottles of beer on the wall.\n\n", have,have,have-1));
+                topass--;
+                have--;
+            } else if(have>1){
+                songverse.append(String.format("%d bottles of beer on the wall, %d bottles of beer.\nTake one down and pass it around, %d bottle of beer on the wall.\n\n", have,have,have-1));
                 topass--;
                 have--;
             } else if(have>0){
@@ -19,6 +23,7 @@ public class BeerSong{
                 have--;
             } else{
                 have = 99;
+                topass--;
                 songverse.append(String.format("No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, %d bottles of beer on the wall.\n\n", have ));
             }
         }
@@ -26,7 +31,7 @@ public class BeerSong{
     }
 
     public String singSong(){
-        return sing(99,99);
+        return sing(99,100);
     }
 
 }

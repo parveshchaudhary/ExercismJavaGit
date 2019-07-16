@@ -10,7 +10,7 @@ class TwelveDays {
             "On the eighth day of Christmas my true love gave to me: eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n",
             "On the ninth day of Christmas my true love gave to me: nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n",
             "On the tenth day of Christmas my true love gave to me: ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n",
-            "On the eleventh day of Christmas my true love gave to me: eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n", 
+            "On the eleventh day of Christmas my true love gave to me: eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n",
             "On the twelfth day of Christmas my true love gave to me: twelve Drummers Drumming, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" };
 
     String verse(int verseNumber) {
@@ -20,22 +20,15 @@ class TwelveDays {
     String verses(int startVerse, int endVerse) {
         StringBuilder strVerses = new StringBuilder();
 
-        for(int i = startVerse; i<endVerse ; i++){
-            strVerses.append(verseWiseArr[i-1]+"\n");
+        for (int i = startVerse; i < endVerse; i++) {
+            strVerses.append(verse(i) + "\n");
         }
-        strVerses.append(verseWiseArr[endVerse-1]);
+        strVerses.append(verse(endVerse));
 
         return strVerses.toString();
     }
 
     String sing() {
-        StringBuilder strVerses = new StringBuilder();
-
-        for(int i = 0; i<11 ; i++){
-            strVerses.append(verseWiseArr[i]+"\n");
-        }
-        strVerses.append(verseWiseArr[11]);
-
-        return strVerses.toString();
+        return (verses(1, 12));
     }
 }

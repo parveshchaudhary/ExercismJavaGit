@@ -43,7 +43,7 @@ public class Allergies {
                 allergiesList.add(Allergen.PEANUTS);
                 hscore -= 2;
             } else if (hscore >= 1) {
-                allergiesList.add(AllergeAn.EGGS);
+                allergiesList.add(Allergen.EGGS);
                 hscore -= 1;
             }
         }

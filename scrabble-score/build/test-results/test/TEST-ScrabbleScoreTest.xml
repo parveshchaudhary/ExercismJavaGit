@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ScrabbleScoreTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2019-07-16T04:46:02" hostname="Interns-MacBook-Pro-02.local" time="0.005">
+<testsuite name="ScrabbleScoreTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2019-07-16T19:08:17" hostname="Interns-MacBook-Pro-02.local" time="0.006">
   <properties/>
-  <testcase name="testAShortValuableWord" classname="ScrabbleScoreTest" time="0.001"/>
-  <testcase name="testEntireAlphabetAvailable" classname="ScrabbleScoreTest" time="0.0"/>
+  <testcase name="testAShortValuableWord" classname="ScrabbleScoreTest" time="0.002"/>
+  <testcase name="testEntireAlphabetAvailable" classname="ScrabbleScoreTest" time="0.001"/>
   <testcase name="testAUpperCaseLetter" classname="ScrabbleScoreTest" time="0.0"/>
   <testcase name="testALongMixCaseWord" classname="ScrabbleScoreTest" time="0.001"/>
   <testcase name="testAEnglishLikeWord" classname="ScrabbleScoreTest" time="0.0"/>
